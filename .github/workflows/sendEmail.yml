@@ -1,7 +1,7 @@
 name: sendEmail
 
 on:
-  # push:
+  push:
   schedule:
   # use crontab guru
     - cron: '0 6 * * 1-5'
