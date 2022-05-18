@@ -1,0 +1,44 @@
+name: sendEmail
+
+on:
+  push:
+    branches: 
+      - main
+  # schedule:
+  #   - cron: '0 0 6 ? * 1-5'
+
+jobs:
+  coffee-time-emailbot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout codes'
+        uses: actions/checkout@v1
+      # - name: 'Working'
+      #   run: bash ./weather-emailbot/main.sh
+      - name: 'Send mail'
+        uses: dawidd6/action-send-mail@master
+        with:
+          serveraddress: smtp.163.com
+          serverport: 465
+          username: ${{ secrets.MAILUSERNAME }}
+          password: ${{ secrets.MAILPASSWORD }}
+          subject: Coffee Time
+          # body: file://result.html
+          body: It's time for coffee
+          to: 447725977@qq.com
+          from: GitHub Actions
+          content_type: text/html
+
+      - name: 'Send mail'
+        uses: dawidd6/action-send-mail@master
+        with:
+          serveraddress: smtp.163.com
+          serverport: 465
+          username: ${{ secrets.MAILUSERNAME }}
+          password: ${{ secrets.MAILPASSWORD }}
+          subject: Coffee Time
+          # body: file://result.html
+          body: It's time for coffee
+          to: 1771346368@qq.com
+          from: GitHub Actions
+          content_type: text/html
