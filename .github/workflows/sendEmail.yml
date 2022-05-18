@@ -15,29 +15,27 @@ jobs:
         uses: actions/checkout@v1
       # - name: 'Working'
       #   run: bash ./weather-emailbot/main.sh
-      - name: 'Send mail'
+      - name: 'Send mail1'
         uses: dawidd6/action-send-mail@master
         with:
-          serveraddress: smtp.163.com
-          serverport: 465
+          server_address: smtp.163.com
+          server_port: 465
           username: ${{ secrets.MAILUSERNAME }}
           password: ${{ secrets.MAILPASSWORD }}
           subject: Coffee Time
-          # body: file://result.html
           body: It's time for coffee
           to: 447725977@qq.com
           from: GitHub Actions
           content_type: text/html
 
-      - name: 'Send mail'
+      - name: 'Send mail2'
         uses: dawidd6/action-send-mail@master
         with:
-          serveraddress: smtp.163.com
-          serverport: 465
+          server_address: smtp.163.com
+          server_port: 465
           username: ${{ secrets.MAILUSERNAME }}
           password: ${{ secrets.MAILPASSWORD }}
           subject: Coffee Time
-          # body: file://result.html
           body: It's time for coffee
           to: 1771346368@qq.com
           from: GitHub Actions
