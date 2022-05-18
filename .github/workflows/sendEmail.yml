@@ -1,9 +1,10 @@
 name: sendEmail
 
 on:
-  push:
+  # push:
   schedule:
-    - cron: '0 0 6 ? * 1-5'
+  # use crontab guru
+    - cron: '0 6 * * 1-5'
 
 jobs:
   coffee-time-emailbot:
