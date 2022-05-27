@@ -1,26 +1,26 @@
-name: sendEmail
+# name: sendEmail
 
-on:
-  push:
-  schedule:
-  # use crontab guru
-    - cron: '55 6 * * 1-5'
+# # on:
+# #   push:
+# #   schedule:
+#   # use crontab guru
+# #     - cron: '55 6 * * 1-5'
 
-jobs:
-  coffee-time-emailbot:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 'Checkout codes'
-        uses: actions/checkout@v1
-      - name: 'Send mail'
-        uses: dawidd6/action-send-mail@master
-        with:
-          server_address: smtp.163.com
-          server_port: 465
-          username: ${{ secrets.MAILUSERNAME }}
-          password: ${{ secrets.MAILPASSWORD }}
-          subject: Coffee Time
-          body: It's time for coffee
-          to: 447725977@qq.com,1771346368@qq.com
-          from: GitHub Actions
-          content_type: text/html
+# jobs:
+#   coffee-time-emailbot:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: 'Checkout codes'
+#         uses: actions/checkout@v1
+#       - name: 'Send mail'
+#         uses: dawidd6/action-send-mail@master
+#         with:
+#           server_address: smtp.163.com
+#           server_port: 465
+#           username: ${{ secrets.MAILUSERNAME }}
+#           password: ${{ secrets.MAILPASSWORD }}
+#           subject: Coffee Time
+#           body: It's time for coffee
+#           to: 447725977@qq.com,1771346368@qq.com
+#           from: GitHub Actions
+#           content_type: text/html
